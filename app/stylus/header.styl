@@ -1,0 +1,169 @@
+.top-wrap
+	min-height 750px
+	+below(768px)
+		min-height 550px
+	background-color #31354f
+	background: url('../images/promo-bg.jpg') 50% / cover
+	color white
+	text-align center
+	overflow hidden
+		
+.header
+	position fixed
+	z-index 100
+	width 100%
+	transition 0.5s background-color
+	&_no-fixed
+		position static
+	&__in
+		border-bottom 1px solid #505369
+		padding-top 40px 
+		padding-bottom 38px
+		width 100%
+		max-width 1170px
+		margin 0 auto
+		transition 0.5s padding
+		&_transformed
+			padding-top 18px !important
+			padding-bottom 20px !important
+			border-bottom none
+		clearfix()
+		+below(1170px)
+			padding-left 3%
+			padding-right 3%
+		+below(950px)
+			padding-top 28px
+			padding-bottom 30px
+	&__logo
+		float left
+		display inline-block
+		sprite($logo)
+		+below(950px)
+			margin-top 10px
+	&__nav
+		float right
+		+below(950px)
+			display none
+		&_active
+			display block !important
+			position fixed
+			z-index 130
+			margin-top 50px
+			width 100%
+			.nav__link
+				font-size $text-size-large
+				margin-bottom 10px
+				margin-left 0
+			.nav__link,
+			.nav__item
+				display block
+	&__nav-toggle
+		float right
+		display none
+		width 40px
+		height 40px
+		background $bright-red
+		border-radius 50%
+		position fixed
+		z-index 999
+		vertical-align middle
+		right 3%
+		+below(950px)
+			display block
+	&__hamb
+		width 20px
+		height 3px
+		position absolute
+		left 50%
+		top 50%
+		margin-top -(@height / 2)
+		margin-left -(@width / 2)
+		background-color white
+		&_active
+			background-color $bright-red
+			&:before
+				transform: translateY(7px) rotate(45deg)	
+			&:after
+				transform: translateY(-7px) rotate(-45deg)
+		&:before
+			content ' '
+			width 20px
+			height 3px
+			position absolute
+			top -7px
+			left 50%
+			margin-left -(@width / 2)
+			background-color white
+			transition all 0.4s
+			//transform: translateY(7px) rotate(45deg)
+		&:after
+			content ' '
+			width 20px
+			height 3px
+			position absolute
+			bottom -7px
+			left 50%
+			margin-left -(@width / 2)
+			background-color white
+			transition all 0.4s			
+			
+.nav
+	&__item, &__link
+		display inline-block
+	&__link
+		color white
+		margin-left 55px
+		opacity 0.75
+		text-transform uppercase
+		font-size $text-size-small
+		font-family 'Raleway'
+		font-weight 700
+		transition: 0.3s opacity
+		&:hover
+			opacity 1
+		
+.promo
+	clear both
+	center(1170px)
+	margin-top 245px
+	+below(950px)
+		margin-top 200px
+	+below(768px)
+		margin-top 150px
+	&__heading
+		text-transform uppercase
+		width 90%
+		line-height 1.1
+		margin 0 auto 20px
+		osb()
+		+below(768px)
+			width 95%
+			font-size $h1-size-small
+		+below(500px)
+			font-size 35px
+	&__text
+		font-size $text-size-large
+		margin 0 auto 78px
+		width 75%
+		+below(768px)
+			font-size $text-size
+		+below(500px)
+			margin-bottom 40px
+	&__btn
+		+below(768px)
+			margin-bottom 20px
+
+// OVERLAY
+
+.overlay
+	position absolute
+	background-color rgba(black, .9)
+	width 100%
+	height 100%
+	top 0
+	left 0
+	z-index 110
+	display none
+	&_active
+		display block
+	

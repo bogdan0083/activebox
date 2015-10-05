@@ -1,0 +1,67 @@
+.footer
+	background #3a3e64
+	color white
+	&__in
+		padding-top 70px
+		padding-bottom 90px
+		center(1170px)
+		+below(550px)
+			text-align center
+	&__location,
+	&__social,
+	&__about
+		display inline-block
+		vertical-align top
+		text-align center
+		margin-right -4px
+		width 33.3333%
+		padding 0 2%
+		+below(550px)
+			width 90%
+			margin 0 auto 70px
+			&:last-child
+				margin-bottom 0
+
+.location__heading,
+.social__heading,
+.about__heading
+	text-transform uppercase
+	rb()
+	margin-bottom 10px
+	
+.social
+	&__icons
+		margin-top 12px
+	&__icon
+		width 40px
+		height 40px
+		border 2px solid white
+		display inline-block
+		vertical-align top
+		transition 0.4s all
+		&:hover
+				border-color $bright-red
+				background-color $bright-red
+		&:nth-child(2)
+			margin 0 4px
+		.fa-twitter,
+		.fa-facebook,
+		.fa-linkedin
+			line-height 40px
+			color white
+		.fa-facebook 
+			font-size 17px
+		.fa-twitter
+			font-size 17px
+				
+.copyright 
+	text-align center
+	background #313454
+	padding 25px 0
+	color grey
+	.fa-heart
+		color $bright-red
+	&__made-by
+		color white
+		
+		

@@ -1,0 +1,14 @@
+{
+  "name": "projects",
+  "private": true,
+  "dependencies": {
+    "Font-Awesome-Stylus": "font-awesome-stylus#~4.4.0",
+    "animatescroll": "~1.0.7",
+    "jquery": "~2.1.1",
+    "modernizr": "~2.8.1"
+  },
+  "devDependencies": {
+    "chai": "~3.3.0",
+    "mocha": "~2.3.3"
+  }
+}

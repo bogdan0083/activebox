@@ -1,0 +1,254 @@
+.features
+	&__in
+		center(1170px, 47px)
+		font-size 0
+		padding-top 120px
+		text-align center
+	&__feature
+		display inline-block
+		width 27.8810%
+		margin-right 8.1760%
+		font-size 14px
+		margin-bottom 72px
+		&:nth-child(3n)
+			margin-right 0
+		+below(768px)
+			width 45%
+			margin 0 0 72px
+			&:nth-child(2n+1)
+				margin-right 10%
+		+below(550px)
+			width 95%
+			margin 0 0 60px
+			&:nth-child(2n+1)
+				margin-right 0
+.feature
+	&__heading
+		rb()
+		text-transform uppercase
+		margin-bottom 15px
+	&__img_pencil
+		sprite($pencil)
+		margin 0 auto 30px
+	&__img_monitor
+		sprite($monitor)
+		margin 0 auto 30px
+	&__img_lamp
+		sprite($lamp)
+		margin 0 auto 30px	
+	&__img_atom
+		sprite($atom)
+		margin 0 auto 30px
+	&__img_case
+		sprite($case)
+		margin 0 auto 30px
+	&__img_cloud
+		sprite($cloud)
+		margin 0 auto 30px
+
+.gallery
+	padding-top 50px
+	.gallery-item_first
+		background url('../images/product1.jpg') 50% / cover	
+	.gallery-item_second
+		background url('../images/product2.jpg') 50% / cover
+	.gallery-item_third
+		background url('../images/product3.jpg') 50% / cover	
+	.gallery-item_forth
+		background url('../images/product4.jpg') 50% / cover
+	.gallery-item_fifth
+		background url('../images/product5.jpg') 50% / cover
+	.gallery-item_sixth
+		background url('../images/product6.jpg') 50% / cover
+	.gallery-item_seventh
+		background url('../images/product7.jpg') 50% / cover
+	.gallery-item_eighth
+		background url('../images/product8.jpg') 50% / cover	
+.gallery-item
+	display inline-block
+	height 350px
+	transition 0.4s transform white
+	box-shadow 0 0 0 1px white
+	width 25%
+	margin-right -4px
+	+below(768px)
+		width 50%
+	+below(550px)
+		width 100%
+	&:hover &__heading,
+	&:hover &__desc
+		opacity 1
+	&__overlay
+		height 100%
+		transition 0.4s background-color
+		vertical-align middle
+		color white
+		text-align center
+		&:before
+			content ' '
+			height 45%
+			display block
+		&:hover
+			background-color rgba(232, 69, 69, 0.9)
+	&__heading, &__desc
+		transition 0.4s opacity
+		opacity 0
+	&__heading
+		rb()
+		text-transform uppercase
+		
+// TEAM
+
+.team
+	&__in
+		center(1170px)
+		padding-top 100px
+	&__worker
+		col(3/12, gutter: 2.5)
+		+below(900px)
+			col(2/4, gutter: 0)
+			text-align center
+			padding-left 5%
+			padding-right 5%
+			margin-bottom 60px
+		+below(550px)
+			width 100%
+.worker
+	&__photo
+		margin-bottom 20px
+	&__name
+		color $dark-grey
+	&__title
+		color $bright-red
+		font-size $text-size-small
+		text-transform uppercase
+		margin-bottom 20px
+	&__desc
+		margin-bottom 45px
+	&__social-icon
+		display inline-block
+		width 40px
+		height 40px
+		border 1px solid #e8ecee
+		text-align center
+		transition all 0.4s
+		.fa-twitter,
+		.fa-facebook,
+		.fa-linkedin
+			color #c6cacc
+			line-height 40px
+		.fa-facebook
+			font-size 19px
+		.fa-twitter
+			font-size 18px
+		&:hover
+			border-color $bright-red
+			background-color $bright-red
+		&:hover .fa-twitter
+		&:hover .fa-facebook
+		&:hover .fa-linkedin
+			color white
+			
+// TESTIMONIALS
+
+.testimonials
+	&__in
+		padding-top 105px
+		+below(900px)
+			padding-top 30px
+	&__slider
+		color white
+		background-color $violet
+		overflow hidden
+		position relative
+		+below(1170px)
+			margin 0 auto
+			width 100%
+			height auto
+			padding-bottom 40px
+	&__controls
+		position absolute
+		z-index 10
+		transition 0.4s all
+
+	&__control
+		width 12px
+		height 12px
+		display inline-block
+		opacity 0.2
+		margin-right 5px
+		background-color white
+		border-radius 50%
+		cursor pointer
+		&:hover
+			opacity 0.7
+	&__control_active
+		opacity 1
+.slide
+	opacity 0
+	transition 0.5s opacity
+	position relative
+	width 0
+	height 0
+	overflow hidden
+	clearfix()
+	&_state_visible
+		opacity 1
+		width 100%
+		height auto
+	&__img
+		margin-left -320px
+		//margin-right 70px
+		float left
+		+below(1170px)
+			float none
+			margin 0 auto
+			display block
+	&__wrap
+		margin-top 105px
+		margin-right 20px
+		float right
+		width 40%
+		+below(1170px)
+			float none
+			width 80%
+			margin 30px auto 60px
+	&__quote
+		cri()
+		font-size 36px
+		line-height 1.17
+		margin-bottom 25px
+		+below(1170px)
+			font-size 25px
+			margin-bottom 10px
+	&__info
+		rb()
+		text-transform uppercase
+		font-size $text-size-small
+
+// DOWNLOAD
+
+.download
+	text-align center
+	&__in
+		center(1170px)
+		padding-top 90px
+		padding-bottom 95px
+	&__heading, &__subheading
+		color $dark-grey
+	&__heading
+		margin 0 auto 5px
+		width 95%
+		rr()
+		+below(650px)
+			font-size $h3-size-small
+	&__subheading
+		margin-bottom 35px
+		text-transform uppercase
+		rb()
+	&__btn
+		width 280px
+		padding-top 13px
+		padding-bottom 13px
+		
+		

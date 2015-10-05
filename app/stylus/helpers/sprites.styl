@@ -1,0 +1,169 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet = width height image $spritesheet_sprites;
+*/
+$atom_name = 'atom';
+$atom_x = 205px;
+$atom_y = 60px;
+$atom_offset_x = -205px;
+$atom_offset_y = -60px;
+$atom_width = 56px;
+$atom_height = 60px;
+$atom_total_width = 268px;
+$atom_total_height = 180px;
+$atom_image = '../images/sprites/sprites.png';
+$atom = 205px 60px -205px -60px 56px 60px 268px 180px '../images/sprites/sprites.png' 'atom';
+$case_name = 'case';
+$case_x = 73px;
+$case_y = 60px;
+$case_offset_x = -73px;
+$case_offset_y = -60px;
+$case_width = 72px;
+$case_height = 60px;
+$case_total_width = 268px;
+$case_total_height = 180px;
+$case_image = '../images/sprites/sprites.png';
+$case = 73px 60px -73px -60px 72px 60px 268px 180px '../images/sprites/sprites.png' 'case';
+$cloud_name = 'cloud';
+$cloud_x = 0px;
+$cloud_y = 0px;
+$cloud_offset_x = 0px;
+$cloud_offset_y = 0px;
+$cloud_width = 79px;
+$cloud_height = 60px;
+$cloud_total_width = 268px;
+$cloud_total_height = 180px;
+$cloud_image = '../images/sprites/sprites.png';
+$cloud = 0px 0px 0px 0px 79px 60px 268px 180px '../images/sprites/sprites.png' 'cloud';
+$lamp_name = 'lamp';
+$lamp_x = 0px;
+$lamp_y = 120px;
+$lamp_offset_x = 0px;
+$lamp_offset_y = -120px;
+$lamp_width = 41px;
+$lamp_height = 60px;
+$lamp_total_width = 268px;
+$lamp_total_height = 180px;
+$lamp_image = '../images/sprites/sprites.png';
+$lamp = 0px 120px 0px -120px 41px 60px 268px 180px '../images/sprites/sprites.png' 'lamp';
+$logo_name = 'logo';
+$logo_x = 79px;
+$logo_y = 0px;
+$logo_offset_x = -79px;
+$logo_offset_y = 0px;
+$logo_width = 189px;
+$logo_height = 24px;
+$logo_total_width = 268px;
+$logo_total_height = 180px;
+$logo_image = '../images/sprites/sprites.png';
+$logo = 79px 0px -79px 0px 189px 24px 268px 180px '../images/sprites/sprites.png' 'logo';
+$monitor_name = 'monitor';
+$monitor_x = 0px;
+$monitor_y = 60px;
+$monitor_offset_x = 0px;
+$monitor_offset_y = -60px;
+$monitor_width = 73px;
+$monitor_height = 60px;
+$monitor_total_width = 268px;
+$monitor_total_height = 180px;
+$monitor_image = '../images/sprites/sprites.png';
+$monitor = 0px 60px 0px -60px 73px 60px 268px 180px '../images/sprites/sprites.png' 'monitor';
+$pencil_name = 'pencil';
+$pencil_x = 145px;
+$pencil_y = 60px;
+$pencil_offset_x = -145px;
+$pencil_offset_y = -60px;
+$pencil_width = 60px;
+$pencil_height = 60px;
+$pencil_total_width = 268px;
+$pencil_total_height = 180px;
+$pencil_image = '../images/sprites/sprites.png';
+$pencil = 145px 60px -145px -60px 60px 60px 268px 180px '../images/sprites/sprites.png' 'pencil';
+$twitter_grey_name = 'twitter-grey';
+$twitter_grey_x = 41px;
+$twitter_grey_y = 120px;
+$twitter_grey_offset_x = -41px;
+$twitter_grey_offset_y = -120px;
+$twitter_grey_width = 40px;
+$twitter_grey_height = 40px;
+$twitter_grey_total_width = 268px;
+$twitter_grey_total_height = 180px;
+$twitter_grey_image = '../images/sprites/sprites.png';
+$twitter_grey = 41px 120px -41px -120px 40px 40px 268px 180px '../images/sprites/sprites.png' 'twitter-grey';
+$twitter_white_name = 'twitter-white';
+$twitter_white_x = 81px;
+$twitter_white_y = 120px;
+$twitter_white_offset_x = -81px;
+$twitter_white_offset_y = -120px;
+$twitter_white_width = 40px;
+$twitter_white_height = 40px;
+$twitter_white_total_width = 268px;
+$twitter_white_total_height = 180px;
+$twitter_white_image = '../images/sprites/sprites.png';
+$twitter_white = 81px 120px -81px -120px 40px 40px 268px 180px '../images/sprites/sprites.png' 'twitter-white';
+$spritesheet_width = 268px;
+$spritesheet_height = 180px;
+$spritesheet_image = '../images/sprites/sprites.png';
+$spritesheet_sprites = $atom $case $cloud $lamp $logo $monitor $pencil $twitter_grey $twitter_white;
+$spritesheet = 268px 180px '../images/sprites/sprites.png' $spritesheet_sprites;
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of Stylus
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+sprites($spritesheet_sprites);
+*/
+sprites($sprites) {
+  for $sprite in $sprites {
+    $sprite_name = $sprite[9];
+    .{$sprite_name} {
+      sprite($sprite);
+    }
+  }
+}
